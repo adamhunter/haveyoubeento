@@ -5,6 +5,7 @@
       %input{type: 'text', ng: {model: 'ctrl.search.location'}, placeholder: 'Location'}
       %input.left.width-48.margin-right{type: 'text', ng: {model: 'ctrl.search.latitude'}, placeholder: 'Latitude'}
       %input.left.width-48{type: 'text', ng: {model: 'ctrl.search.longitude'}, placeholder: 'Longitude'}
+      .clear
       %button#go{ng: {click: 'ctrl.query()'}}
         %i.fi-search
         GO

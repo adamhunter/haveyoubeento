@@ -2,10 +2,6 @@ html, body {
   background-color:#fbfbfb;
 }
 
-h1 {
-  padding:0px 15px;
-}
-
 .left {
   float:left;
 }
@@ -51,6 +47,10 @@ table.large-12 {
 
 .center {
   text-align:center;
+}
+
+#box {
+  margin-top:25px;
 }
 
 .box {

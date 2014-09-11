@@ -1,4 +1,6 @@
 #container{ng: {app: 'HaveYouBeenTo'}}
   .row{ng: {controller: 'MainController as main'}}
-    %h1= title
-    .small-12.columns{ng: {view: true}}
+    .box#box
+      .box-content
+        %h1= title
+        .small-12{ng: {view: true}}

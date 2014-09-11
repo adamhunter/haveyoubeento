@@ -2,12 +2,28 @@ html, body {
   background-color:#fbfbfb;
 }
 
+h1 {
+  padding:0px 15px;
+}
+
+.left {
+  float:left;
+}
+
+.margin-right {
+  margin-right:20px !important;
+}
+
 button#go {
   margin-bottom:0;
   background-color:#8ac007; 
 }
 button#go:hover{
   background-color: #74a108 !important;
+}
+
+input[type="text"].width-48 {
+  width:48.86% !important;
 }
 
 table.large-12 {

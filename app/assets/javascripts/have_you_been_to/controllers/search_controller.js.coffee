@@ -8,15 +8,14 @@ HaveYouBeenTo.controller 'SearchController',
       @search      = {}
       @restaurants = [name: 'bar', rating: '4.1']
 
-      @$scope.$watch((=> geoLocation.city), (newValue) => 
-        return unless newValue
-        @search.location  = geoLocation.city
-        @search.longitude = geoLocation.longitude
-        @search.latitude  = geoLocation.latitude
-      )
+      @geoLocation.$promise.then (location) =>
+        @search.location  = @geoLocation.city
+        @search.longitude = @geoLocation.longitude
+        @search.latitude  = @geoLocation.latitude
 
     query: ->
         return if !@search.location or !@search.query or @search.query.length < 3
+        @restaurants.length = 0
 
         @yelps = @Yelp.query(search: @search)
         @yelps.$promise.then(=> angular.forEach(@yelps, (item) => @restaurants.push(item)))

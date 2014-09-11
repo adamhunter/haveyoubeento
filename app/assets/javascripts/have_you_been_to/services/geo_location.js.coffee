@@ -1,11 +1,15 @@
 HaveYouBeenTo.service 'geoLocation',
   class GeoLocation
-    @$inject: ['$http']
+    @$inject: ['$window', '$q']
 
-    constructor: (@$http) ->
-      @request = @$http.get("http://freegeoip.net/json/")
-      @request.then (response) => angular.extend @, response.data
-
-    locate: (fn) ->
-      @request.then fn
+    constructor: (@$window, $q) ->
+      @deferred = $q.defer()
+      @$promise = @deferred.promise
+      @$window.navigator.geolocation.getCurrentPosition (geoposition) =>
+        angular.extend @, geoposition.coords
+        geocoder = new google.maps.Geocoder();
+        latlng   = new google.maps.LatLng(@latitude, @longitude);
+        geocoder.geocode latLng: latlng, (data) =>
+          @city = data[0].address_components[3].long_name
+          @deferred.resolve(@)
 

@@ -9,7 +9,7 @@ class YelpResource < RestaurantResource
   parse :state_abbr, -> { location[:code] }
   parse :zip,        -> { location[:postal_code] }
   parse :rating,     -> { BigDecimal.new data[:rating], 3 }
-  parse :type,       -> { 'Yelp' }
+  parse :source,     -> { {name: 'Yelp', key: 'yelp'} }
 
   def self.request(search)
     Yelp.client.search(search[:location], term: search[:query], cll: [search[:latitude], search[:longitude]].join(',')).businesses.map { |b| b.instance_variable_get(:@hash) }

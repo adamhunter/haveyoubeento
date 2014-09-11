@@ -9,6 +9,6 @@ class RestaurantResource < Resource
   attribute :state_abbr
   attribute :zip
   attribute :rating
-  attribute :type
+  attribute :source
 
 end

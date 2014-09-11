@@ -28,9 +28,9 @@
             %span{ng: {show: 'restaurant.rating === 0'}}
               ?
           %td.center
-            %a.button.small{ng: {href: "#/restaurants/{{restaurant.source.key}}/{{restaurant.id}}"}}
+            %a.button.small{ng: {href: "#/restaurants/{{restaurant.source.key}}/{{restaurant.id}}"}, class: 'source-{{restaurant.source.key}}'}
               {{restaurant.source.name}}
-        %tr{ng: {show: 'restaurant.length === 0'}}
+        %tr{ng: {show: 'ctrl.restaurants.length === 0'}}
           %td{colspan: 4}
             .no-results
               No Results For Your Query

@@ -5,3 +5,6 @@ HaveYouBeenTo.Sources =
   yelp:        
     name: 'Yelp'
     key:  'yelp'
+  have_you_been_to:
+    name: 'HUB2'
+    key:  'have_you_been_to'

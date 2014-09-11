@@ -6,7 +6,7 @@ HaveYouBeenTo.controller 'SearchController',
 
     constructor: (@$scope, @Yelp, @geoLocation, @GoogleMaps, @Facebook) ->
       @search      = {}
-      @restaurants = [name: 'bar', rating: '4.1']
+      @restaurants = [@chickapeas()]
 
       @geoLocation.$promise.then (location) =>
         @search.location  = @geoLocation.city
@@ -22,4 +22,10 @@ HaveYouBeenTo.controller 'SearchController',
 
         @gMaps = @GoogleMaps.query(search: @search)
         @gMaps.$promise.then(=> angular.forEach(@gMaps, (item) => @restaurants.push(item)))
+
+    chickapeas: ->
+      name:    "Chickapea's Place"
+      rating:  '5.1'
+      address: 'Independence Highway'
+      source:  HaveYouBeenTo.Sources.have_you_been_to
 

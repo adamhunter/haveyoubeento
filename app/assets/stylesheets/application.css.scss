@@ -14,16 +14,18 @@ html, body {
   margin-right:20px !important;
 }
 
-button#go {
+button#go.button {
   margin-bottom:0;
-  background-color:#8ac007; 
+  background-color:#8ac007;
+  padding-top:.59rem;
+  padding-bottom:.5rem;
 }
 button#go:hover{
   background-color: #74a108 !important;
 }
 
-input[type="text"].width-48 {
-  width:48.86% !important;
+input[type="text"].width-43 {
+  width:43.3% !important;
 }
 
 table.large-12 {
@@ -31,11 +33,11 @@ table.large-12 {
   a.button {
     margin-bottom:0;
   }
-  .width-10 {
-    width:10%;
+  .width-7 {
+    width:7%;
   }
-  .width-20 {
-    width:20%;
+  .width-15 {
+    width:15%;
   }
   .width-30 {
     width:30%;
@@ -47,6 +49,10 @@ table.large-12 {
 
 .center {
   text-align:center;
+}
+
+.right {
+  text-align:right;
 }
 
 #box {

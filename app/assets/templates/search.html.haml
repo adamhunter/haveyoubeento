@@ -1,12 +1,12 @@
 %form{name: 'search'}  
   %input{type: 'text', ng: {model: 'ctrl.search.query'}, autofocus: true, placeholder: 'Business' }
   %input{type: 'text', ng: {model: 'ctrl.search.location'}, placeholder: 'Location'}
-  %input.left.width-48.margin-right{type: 'text', ng: {model: 'ctrl.search.latitude'}, placeholder: 'Latitude'}
-  %input.left.width-48{type: 'text', ng: {model: 'ctrl.search.longitude'}, placeholder: 'Longitude'}
-  .clear
-  %button#go{ng: {click: 'ctrl.query()'}}
+  %input.left.width-43.margin-right{type: 'text', ng: {model: 'ctrl.search.latitude'}, placeholder: 'Latitude'}
+  %input.left.width-43.margin-right{type: 'text', ng: {model: 'ctrl.search.longitude'}, placeholder: 'Longitude'}
+  %button#go.button{ng: {click: 'ctrl.query()'}}
     %i.fi-search
     GO
+  .clear
 .box
   .box-header
     Business Results
@@ -16,13 +16,13 @@
         %tr
           %th.width-30 Name
           %th.width-40 Address
-          %th.width-10 Rating
-          %th.width-20
+          %th.width-7 Rating
+          %th.width-15
       %tbody
         %tr{ng: {repeat: %Q[restaurant in ctrl.restaurants | orderBy:ctrl.orderBy]}}
           %td {{restaurant.name}}
           %td {{restaurant.address}}
-          %td 
+          %td.right 
             %span{ng: {show: 'restaurant.rating > 0'}}
               {{restaurant.rating}}
             %span{ng: {show: 'restaurant.rating === 0'}}

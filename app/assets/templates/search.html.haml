@@ -7,8 +7,9 @@
           %input{type: 'text', ng: {model: 'ctrl.search.location'}}
           %input{type: 'text', ng: {model: 'ctrl.search.latitude'}}
           %input{type: 'text', ng: {model: 'ctrl.search.longitude'}}
-          %button{ng: {click: 'ctrl.query()'}}
+          %button.right{ng: {click: 'ctrl.query()'}}
             %i.fi-search
+            GO
       %tr
         %th Name
         %th Address

@@ -15,6 +15,7 @@ HaveYouBeenTo.controller 'SearchController',
 
     query: ->
         return if !@search.location or !@search.query or @search.query.length < 3
+        @restaurants.length = 0
 
         @yelps = @Yelp.query(search: @search)
         @yelps.$promise.then(=> angular.forEach(@yelps, (item) => @restaurants.push(item)))

@@ -25,7 +25,8 @@
           %span{ng: {show: 'restaurant.rating === 0'}}
             ?
         %td
-          %a.button{href: '/?'} {{restaurant.type}}
+          %a.button{ng: {href: "#/restaurants/{{restaurant.source.key}}/{{restaurant.id}}"}}
+            {{restaurant.source.name}}
       %tr{ng: {show: 'restaurant.length === 0'}}
         %td{colspan: 4}
           .no-results

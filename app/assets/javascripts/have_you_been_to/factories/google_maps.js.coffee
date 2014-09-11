@@ -20,7 +20,8 @@ HaveYouBeenTo.factory 'GoogleMaps', ['$q', ($q) ->
             url:  ''
             address: item.formatted_address
             rating: "#{item.rating or 0}"
-            type: 'Google Maps'
+            source: HaveYouBeenTo.Sources.google_maps
+            id:     item.place_id
           )
         )
         deffered.resolve(@results)

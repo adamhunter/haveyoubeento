@@ -1,5 +1,6 @@
 class RestaurantResource < Resource
 
+  attribute :id
   attribute :name
   attribute :url
   attribute :phone

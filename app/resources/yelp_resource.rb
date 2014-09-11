@@ -1,5 +1,6 @@
 class YelpResource < RestaurantResource
 
+  parse :id,         -> { data[:id] }
   parse :name,       -> { data[:name] }
   parse :url,        -> { data[:url] }
   parse :phone,      -> { data[:phone] }

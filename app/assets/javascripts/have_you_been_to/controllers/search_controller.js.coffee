@@ -2,6 +2,8 @@ HaveYouBeenTo.controller 'SearchController',
   class SearchController
     @$inject: ['$scope', 'Yelp', 'geoLocation', 'GoogleMaps']
 
+    orderBy: ["-rating", "+name", "+address"]
+
     constructor: (@$scope, @Yelp, @geoLocation, @GoogleMaps, @Facebook) ->
       @search      = {}
       @restaurants = [name: 'bar', rating: '4.1']

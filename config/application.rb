@@ -10,6 +10,7 @@ class HaveYouBeenTo::Application < Rails::Application
   config.active_support.deprecation = :log
   config.assets.debug = true
   assets.register_engine '.haml', Tilt::HamlTemplate
+  assets.context_class.instance_exec { include Rails.application.routes.url_helpers }
   # config.action_mailer.raise_delivery_errors = false
   # config.active_record.migration_error = :page_load
 end

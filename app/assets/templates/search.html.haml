@@ -15,7 +15,7 @@
         %th Rating
         %th
     %tbody
-      %tr{ng: {repeat: "restaurant in ctrl.restaurants | orderBy:'-rating'"}}
+      %tr{ng: {repeat: %Q[restaurant in ctrl.restaurants | orderBy:ctrl.orderBy]}}
         %td {{restaurant.name}}
         %td {{restaurant.address}}
         %td 

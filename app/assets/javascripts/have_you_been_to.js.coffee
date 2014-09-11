@@ -1,1 +1,1 @@
-window.HaveYouBeenTo = angular.module('HaveYouBeenTo', ['ngRoute', 'ngResource'])
+window.HaveYouBeenTo = angular.module('HaveYouBeenTo', ['ngRoute', 'ngResource', 'ui.utils'])

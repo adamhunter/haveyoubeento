@@ -1,0 +1,38 @@
+%form{name: 'search'}
+  %table.large-12.columns
+    %thead
+      %tr
+        %th{colspan: 4}
+          %input{type: 'text', ng: {model: 'ctrl.search.query'}, autofocus: true}
+          %input{type: 'text', ng: {model: 'ctrl.search.location'}}
+          %input{type: 'text', ng: {model: 'ctrl.search.latitude'}}
+          %input{type: 'text', ng: {model: 'ctrl.search.longitude'}}
+          %button{ng: {click: 'ctrl.query()'}}
+            %i.fi-search
+      %tr
+        %th Name
+        %th Address
+        %th Rating
+        %th
+    %tbody
+      %tr{ng: {repeat: "restaurant in ctrl.restaurants | orderBy:'-rating'"}}
+        %td {{restaurant.name}}
+        %td {{restaurant.address}}
+        %td 
+          %span{ng: {show: 'restaurant.rating > 0'}}
+            {{restaurant.rating}}
+          %span{ng: {show: 'restaurant.rating === 0'}}
+            ?
+        %td
+          %a.button{href: '/?'} {{restaurant.type}}
+      %tr{ng: {show: 'restaurant.length === 0'}}
+        %td{colspan: 4}
+          .no-results
+            No Results For Your Query
+-# attribute :name
+-# attribute :url
+-# attribute :phone
+-# attribute :address
+-# attribute :city
+-# attribute :state_abbr
+-# attribute :zip

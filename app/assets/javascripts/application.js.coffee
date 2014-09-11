@@ -1,0 +1,10 @@
+#= require_self
+#= require have_you_been_to
+#= require_tree ./have_you_been_to/controllers
+#= require_tree ./have_you_been_to/directives
+#= require_tree ./have_you_been_to/factories
+#= require_tree ./have_you_been_to/resources
+#= require_tree ./have_you_been_to/services
+#= require have_you_been_to/templates
+#= require have_you_been_to/urls
+#= require have_you_been_to/routes

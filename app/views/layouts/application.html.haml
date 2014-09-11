@@ -1,0 +1,13 @@
+!!!5
+%html
+  %head
+    %title= title
+    = stylesheet_link_tag '//cdnjs.cloudflare.com/ajax/libs/foundation/5.3.3/css/foundation.min.css'
+  
+  %body
+    = yield
+    = angular_js_include_tags %w[route resource]
+    = javascript_include_tag '//maps.googleapis.com/maps/api/js?libraries=places'
+    = javascript_include_tag '//connect.facebook.net/en_US/sdk.js'
+    = javascript_include_tag 'application'
+    #fb-root

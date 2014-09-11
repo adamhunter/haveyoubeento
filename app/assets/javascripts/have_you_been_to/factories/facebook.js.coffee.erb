@@ -1,0 +1,10 @@
+HaveYouBeenTo.factory 'Facebook', ['$window', ($window) ->
+  Facebook = $window.FB
+  window.fbAsyncInit = =>
+    Facebook.init(
+      appId: '629432050507493'
+      xfbml: false
+      version: 'v2.0'
+    )
+  Facebook
+]

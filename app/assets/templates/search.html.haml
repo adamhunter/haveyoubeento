@@ -1,35 +1,35 @@
-%form{name: 'search'}
-  %table.large-12.columns
-    %thead
-      %tr
-        %th{colspan: 4}
-          %input{type: 'text', ng: {model: 'ctrl.search.query'}, autofocus: true}
-          %input{type: 'text', ng: {model: 'ctrl.search.location'}}
-          %input{type: 'text', ng: {model: 'ctrl.search.latitude'}}
-          %input{type: 'text', ng: {model: 'ctrl.search.longitude'}}
-          %button.right{ng: {click: 'ctrl.query()'}}
-            %i.fi-search
-            GO
-      %tr
-        %th Name
-        %th Address
-        %th Rating
-        %th
-    %tbody
-      %tr{ng: {repeat: %Q[restaurant in ctrl.restaurants | orderBy:ctrl.orderBy]}}
-        %td {{restaurant.name}}
-        %td {{restaurant.address}}
-        %td 
-          %span{ng: {show: 'restaurant.rating > 0'}}
-            {{restaurant.rating}}
-          %span{ng: {show: 'restaurant.rating === 0'}}
-            ?
-        %td
-          %a.button{href: '/?'} {{restaurant.type}}
-      %tr{ng: {show: 'restaurant.length === 0'}}
-        %td{colspan: 4}
-          .no-results
-            No Results For Your Query
+.box
+  .box-content
+    %form{name: 'search'}  
+      %input{type: 'text', ng: {model: 'ctrl.search.query'}, autofocus: true, placeholder: 'Restaurant Type' }
+      %input{type: 'text', ng: {model: 'ctrl.search.location'}}
+      %input{type: 'text', ng: {model: 'ctrl.search.latitude'}}
+      %input{type: 'text', ng: {model: 'ctrl.search.longitude'}}
+      %button#go{ng: {click: 'ctrl.query()'}}
+        %i.fi-search
+        GO
+%table.large-12.columns
+  %thead
+    %tr
+      %th.width-30 Name
+      %th.width-40 Address
+      %th.width-10 Rating
+      %th.width-20
+  %tbody
+    %tr{ng: {repeat: %Q[restaurant in ctrl.restaurants | orderBy:ctrl.orderBy]}}
+      %td {{restaurant.name}}
+      %td {{restaurant.address}}
+      %td 
+        %span{ng: {show: 'restaurant.rating > 0'}}
+          {{restaurant.rating}}
+        %span{ng: {show: 'restaurant.rating === 0'}}
+          ?
+      %td.center
+        %a.button.small{href: '/?'} {{restaurant.type}}
+    %tr{ng: {show: 'restaurant.length === 0'}}
+      %td{colspan: 4}
+        .no-results
+          No Results For Your Query
 -# attribute :name
 -# attribute :url
 -# attribute :phone
